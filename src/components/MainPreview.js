@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PreviewButton from './previewButton';
 
 class MainPreview extends Component {
     render() {
@@ -25,12 +26,7 @@ class MainPreview extends Component {
                         </ul>
                         <ul className="card__list card__skills-list" id="ul-skills">
                         </ul>
-                        <button className="card__button" type="button">
-                            <span className="button__icon">
-                                <i className="button_icon far fa-trash-alt"></i>
-                            </span>
-                            <span className="button__text">Reset</span>
-                        </button>
+                        <PreviewButton />
                     </div>
                 </div>
             </section>
