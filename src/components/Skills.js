@@ -5,7 +5,7 @@ class Skills extends Component {
         return (
             <div>
                 <p className="fill--checkbox__text">Habilidades (máximo 3)</p>
-                <div className="checkers"></div>
+                <div className="checkers">{this.props.skills}</div>
             </div>
         )
     }

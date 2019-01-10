@@ -21,7 +21,7 @@ class Fill extends Component {
                     <NameJob />
                     <Image />
                     <SocialMedia />
-                    <Skills />
+                    <Skills  skills={this.props.skills}/>
                 </div>
             </fieldset>
         )
