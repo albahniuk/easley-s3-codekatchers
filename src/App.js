@@ -4,11 +4,9 @@ import './App.scss';
 
 const skills = ['html','gulp','javaScript'];
 
-
-
 class App extends Component {
   render() {
-    return <CardCreator skills={skills}/>
+    return <CardCreator skills={skills} />
     }
   }
     

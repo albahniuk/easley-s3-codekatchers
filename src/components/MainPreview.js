@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PreviewButton from './previewButton';
+import PreviewButton from './PreviewButton';
 
 class MainPreview extends Component {
     render() {
