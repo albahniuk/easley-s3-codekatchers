@@ -8,7 +8,7 @@ class CardCreator extends Component {
         return (
             <div className="page">
                 <HeaderCreator />
-                <MainCreator skills={this.props.skills} />
+                <MainCreator skills={this.props.skills} name={this.props.name}/>
                 <Footer />
             </div>
         );

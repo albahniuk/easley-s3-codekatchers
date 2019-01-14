@@ -7,7 +7,7 @@ class MainCreator extends Component {
         return (
             <main className="main__parts">
                 <MainPreview />
-                <MainForm skills={this.props.skills} />
+                <MainForm skills={this.props.skills} name={this.props.name}/>
             </main>
         );
     }
