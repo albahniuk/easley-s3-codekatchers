@@ -6,11 +6,12 @@ class MainCreator extends Component {
     render() {
         return (
             <main className="main__parts">
-                <MainPreview />
-                <MainForm skills={this.props.skills} name={this.props.name}/>
+                <MainPreview name={this.props.name} job={this.props.job}/>
+                <MainForm skills={this.props.skills} handleName={this.props.handleName} handleJob={this.props.handleJob}/>
             </main>
         );
     }
 }
 
 export default MainCreator;
+

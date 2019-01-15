@@ -8,8 +8,8 @@ class MainPreview extends Component {
                 <div className="card">
                     <div className="card__wrapper" id="card__wrapper">
                         <div className="card__titles">
-                            <h2 className="title__name">nombre apellido</h2>
-                            <p className="title__profession">front-end developer</p>
+                            <h2 className="title__name">{this.props.name}</h2>
+                            <p className="title__profession">{this.props.job}</p>
                         </div>
                         <div className="card__image">
                             <img src="" alt="" className="image__photo" />

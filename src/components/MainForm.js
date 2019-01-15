@@ -11,7 +11,7 @@ class MainForm extends Component {
                     Campo de email obligatorio
                 </div>
                 <Design />
-                <Fill skills={this.props.skills} />
+                <Fill skills={this.props.skills} name={this.props.name} handleName={this.props.handleName} handleJob={this.props.handleJob}/>
                 <Share />
             </form>
         );
