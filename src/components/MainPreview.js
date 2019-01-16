@@ -11,9 +11,7 @@ class MainPreview extends Component {
                             <h2 className="title__name">{this.props.name}</h2>
                             <p className="title__profession">{this.props.job}</p>
                         </div>
-                        <div className="card__image">
-                            <img src="" alt="" className="image__photo" />
-                        </div>
+                        <div className="card__image" style={{backgroundImage: `url(${this.props.image})`}}></div>
                         <ul className="card__list card__contact-list">
                             <li className="contact-list__element contact-list__phone">
                             </li>

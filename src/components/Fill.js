@@ -19,7 +19,7 @@ class Fill extends Component {
                 </div>
                 <div className="section fill--content">
                     <NameJob handleName={this.props.handleName} handleJob={this.props.handleJob}/>
-                    <Image />
+                    <Image handleUrl={this.props.handleUrl} fileInput={this.props.fileInput}/>
                     <SocialMedia />
                     <Skills  skills={this.props.skills}/>
                 </div>
