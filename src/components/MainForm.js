@@ -10,7 +10,7 @@ class MainForm extends Component {
                 <div className="error__wrapper hidden">
                     Campo de email obligatorio
                 </div>
-                <Design />
+                <Design handleColor={this.props.handleColor}/>
                 <Fill skills={this.props.skills}  handleName={this.props.handleName} handleJob={this.props.handleJob} handleUrl={this.props.handleUrl} handleEmail={this.props.handleEmail} handlePhone={this.props.handlePhone} handleLinkedin={this.props.handleLinkedin} handleGithub={this.props.handleGithub}/>
                 <Share />
             </form>

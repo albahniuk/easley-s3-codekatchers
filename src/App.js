@@ -15,7 +15,8 @@ class App extends Component {
         email: '',
         phone: '',
         linkedin: '',
-        github: ''
+        github: '',
+        color: 'green'
       }
     }
 
@@ -26,6 +27,7 @@ class App extends Component {
     this.handlePhone = this.handlePhone.bind(this);
     this.handleLinkedin = this.handleLinkedin.bind(this);
     this.handleGithub = this.handleGithub.bind(this);
+    this.handleColor = this.handleColor.bind(this);
   }
 
   handleName(e) {
@@ -86,10 +88,18 @@ class App extends Component {
       });
   }
 
+  handleColor(e) {
+    const cardState = this.state.card;
+    this.setState(
+      {
+        card: { ...cardState, color: e.currentTarget.value }
+      });
+  }
+  
   render() {
     return (
       <React.Fragment>
-        <CardCreator card={this.state.card} skills={this.state.skills} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub}/>
+        <CardCreator card={this.state.card} skills={this.state.skills} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor}/>
       </React.Fragment>
     )
   }
