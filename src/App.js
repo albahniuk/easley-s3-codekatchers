@@ -11,13 +11,17 @@ class App extends Component {
       card: {
         name: 'Nombre Apellido',
         job: 'Front-end developer',
-        image: defaultImg
+        image: defaultImg,
+        email: '',
+        phone: ''
       }
     }
 
     this.handleName = this.handleName.bind(this);
     this.handleJob = this.handleJob.bind(this);
     this.handleUrl = this.handleUrl.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
+    this.handlePhone = this.handlePhone.bind(this);
   }
 
   handleName(e) {
@@ -46,13 +50,26 @@ class App extends Component {
     )
   }
 
+  handleEmail(e) {
+    const cardState = this.state.card;
+    this.setState(
+      {
+        card: { ...cardState, email: e.currentTarget.value }
+      });
+  }
+
+  handlePhone(e) {
+    const cardState = this.state.card;
+    this.setState(
+      {
+        card: { ...cardState, phone: e.currentTarget.value }
+      });
+  }
+
   render() {
     return (
       <React.Fragment>
-        <CardCreator skills={this.state.skills} name={this.state.card.name} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} job={this.state.card.job} image={this.state.card.image}/>
-        {/* para pasar de CardCreator a hijos poner en cardCreator el name={this.state.name} y el onkeyup={this.handlekeyup}. Luego el name tiene que ir tanto en el sitio donde escibe el usuario como en el sitio donde se pinta */}
-        {/* <input type="text" onKeyUp={this.handleKeyUp} defaultValue={this.state.name} />
-        <div>{this.state.card.name}</div> */}
+        <CardCreator skills={this.state.skills} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} card={this.state.card}/>
       </React.Fragment>
     )
   }

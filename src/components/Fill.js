@@ -19,9 +19,9 @@ class Fill extends Component {
                 </div>
                 <div className="section fill--content">
                     <NameJob handleName={this.props.handleName} handleJob={this.props.handleJob}/>
-                    <Image handleUrl={this.props.handleUrl} fileInput={this.props.fileInput}/>
-                    <SocialMedia />
-                    <Skills  skills={this.props.skills}/>
+                    <Image handleUrl={this.props.handleUrl}/>
+                    <SocialMedia handleEmail={this.props.handleEmail} handlePhone={this.props.handlePhone}/>
+                    <Skills skills={this.props.skills}/>
                 </div>
             </fieldset>
         )
