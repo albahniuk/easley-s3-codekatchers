@@ -20,7 +20,7 @@ class Fill extends Component {
                 <div className="section fill--content">
                     <NameJob handleName={this.props.handleName} handleJob={this.props.handleJob}/>
                     <Image handleUrl={this.props.handleUrl}/>
-                    <SocialMedia handleEmail={this.props.handleEmail} handlePhone={this.props.handlePhone}/>
+                    <SocialMedia handleEmail={this.props.handleEmail} handlePhone={this.props.handlePhone} handleLinkedin={this.props.handleLinkedin} handleGithub={this.props.handleGithub}/>
                     <Skills skills={this.props.skills}/>
                 </div>
             </fieldset>

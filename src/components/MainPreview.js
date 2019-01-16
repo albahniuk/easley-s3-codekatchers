@@ -15,12 +15,32 @@ class MainPreview extends Component {
     writePhone(phone) {
         if (phone !== '') {
             return (
-                <a className="element__link"  href={`tel: ${this.props.card.phone}`} target="_blank"> <i className="problematic_icon card_icon fas fa-mobile-alt"></i></a>
+                <a className="element__link" href={`tel: ${this.props.card.phone}`} target="_blank"> <i className="problematic_icon card_icon fas fa-mobile-alt"></i></a>
             )
         }
     }
 
-    
+    writeLinkedin(linkedin) {
+        if (linkedin !== '') {
+            return (
+                <a class="element__link" href={`https://linkedin.com/in/ ${this.props.card.linkedin}`} target="_blank">
+                    <i class="card_icon fab fa-linkedin-in"></i>
+                </a>
+            )
+        }
+    }
+
+    writeGithub(github) {
+        if (github !== '') {
+            return (
+                <a class="element__link" href={`https://github.com/ ${this.props.card.github}`} target="_blank">
+                <i class="card_icon fab fa-github-alt"></i>
+                </a>
+            )
+        }
+    }
+
+
     render() {
         return (
             <section className="cardSection">
@@ -36,9 +56,9 @@ class MainPreview extends Component {
                             </li>
                             <li className="contact-list__element contact-list__mail">{this.writeEmail(this.props.card.email)}
                             </li>
-                            <li className="contact-list__element contact-list__linkedin">
+                            <li className="contact-list__element contact-list__linkedin">{this.writeLinkedin(this.props.card.linkedin)}
                             </li>
-                            <li className="contact-list__element contact-list__github">
+                            <li className="contact-list__element contact-list__github">{this.writeGithub(this.props.card.github)}
                             </li>
                         </ul>
                         <ul className="card__list card__skills-list" id="ul-skills">
@@ -52,13 +72,3 @@ class MainPreview extends Component {
 }
 
 export default MainPreview;
-
-
-
-// const item = `<a class="element__link" href="https://linkedin.com/in/ ${linkedin}" target="_blank">
-// <i class="card_icon fab fa-linkedin-in"></i>
-// </a>`;
-
-// const item = `<a class="element__link" href="https://github.com/ ${github}"target="_blank">
-// <i class="card_icon fab fa-github-alt"></i>
-// </a>`;

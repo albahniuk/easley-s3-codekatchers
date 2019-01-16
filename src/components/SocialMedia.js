@@ -14,12 +14,12 @@ class SocialMedia extends Component {
                 </div>
                 <div className="fill--form">
                     <label className="fill--form_label" htmlFor="linkedin">Linkedin</label>
-                    <input className="fill--form_input" placeholder=" Ej: sally.hill" id="linkedin" type="text"
+                    <input onKeyUp={this.props.handleLinkedin}className="fill--form_input" placeholder=" Ej: sally.hill" id="linkedin" type="text"
                         name="linkedin" />
                 </div>
                 <div className="fill--form">
                     <label className="fill--form_label" htmlFor="github">Github</label>
-                    <input className="fill--form_input" placeholder=" Ej: sally-hill" id="github" type="text" name="github" />
+                    <input onKeyUp={this.props.handleGithub} className="fill--form_input" placeholder=" Ej: sally-hill" id="github" type="text" name="github" />
                 </div>
             </div>
         )

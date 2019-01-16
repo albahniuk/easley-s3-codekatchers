@@ -13,7 +13,9 @@ class App extends Component {
         job: 'Front-end developer',
         image: defaultImg,
         email: '',
-        phone: ''
+        phone: '',
+        linkedin: '',
+        github: ''
       }
     }
 
@@ -22,6 +24,8 @@ class App extends Component {
     this.handleUrl = this.handleUrl.bind(this);
     this.handleEmail = this.handleEmail.bind(this);
     this.handlePhone = this.handlePhone.bind(this);
+    this.handleLinkedin = this.handleLinkedin.bind(this);
+    this.handleGithub = this.handleGithub.bind(this);
   }
 
   handleName(e) {
@@ -66,10 +70,26 @@ class App extends Component {
       });
   }
 
+  handleLinkedin(e) {
+    const cardState = this.state.card;
+    this.setState(
+      {
+        card: { ...cardState, linkedin: e.currentTarget.value }
+      });
+  }
+
+  handleGithub(e) {
+    const cardState = this.state.card;
+    this.setState(
+      {
+        card: { ...cardState, github: e.currentTarget.value }
+      });
+  }
+
   render() {
     return (
       <React.Fragment>
-        <CardCreator skills={this.state.skills} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} card={this.state.card}/>
+        <CardCreator card={this.state.card} skills={this.state.skills} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub}/>
       </React.Fragment>
     )
   }
