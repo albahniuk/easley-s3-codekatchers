@@ -45,12 +45,12 @@ class MainPreview extends Component {
         return (
             <section className="cardSection">
                 <div className="card">
-                    <div className={`card__wrapper ${this.props.card.colors}`} id="card__wrapper">
+                    <div className={`card__wrapper ${this.props.card.palette} ${this.props.card.typography}`} id="card__wrapper">
                         <div className="card__titles">
                             <h2 className="title__name">{this.props.card.name}</h2>
                             <p className="title__profession">{this.props.card.job}</p>
                         </div>
-                        <div className="card__image" style={{ backgroundImage: `url(${this.props.card.image})` }}></div>
+                        <div className="card__image" style={{ backgroundImage: `url(${this.props.card.photo})` }}></div>
                         <ul className="card__list card__contact-list">
                             <li className="contact-list__element contact-list__phone">{this.writePhone(this.props.card.phone)}
                             </li>

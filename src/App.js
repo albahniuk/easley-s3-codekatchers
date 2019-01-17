@@ -12,12 +12,14 @@ class App extends Component {
       card: {
         name: 'Nombre Apellido',
         job: 'Front-end developer',
-        image: defaultImg,
+        photo: defaultImg,
         email: '',
         phone: '',
         linkedin: '',
         github: '',
-        color: ''
+        palette: '1',
+        typography: '2',
+        skills: ['html']
       }
     }
 
@@ -29,6 +31,7 @@ class App extends Component {
     this.handleLinkedin = this.handleLinkedin.bind(this);
     this.handleGithub = this.handleGithub.bind(this);
     this.handleColor = this.handleColor.bind(this);
+    this.handleFonts = this.handleFonts.bind(this);
   }
 
   fetchNewSkills() {
@@ -61,7 +64,7 @@ class App extends Component {
 
     this.setState(
       {
-        card: { ...cardState, image: url }
+        card: { ...cardState, photo: url }
       }
     )
   }
@@ -105,19 +108,44 @@ class App extends Component {
 
       this.setState(
         {
-          card: { ...cardState, color: '' }
+          card: { ...cardState, palette: '' }
         });
 
     } else if (e.currentTarget.value === 'red') {
       this.setState(
         {
-          card: { ...cardState, color: 'card__theme-red' }
+          card: { ...cardState, palette: 'card__theme-red' }
         });
 
     } else if (e.currentTarget.value === 'blue') {
       this.setState(
         {
-          card: { ...cardState, color: 'card__theme-blue' }
+          card: { ...cardState, palette: 'card__theme-blue' }
+        });
+    }
+  }
+
+  handleFonts(e) {
+    const cardState = this.state.card;
+    console.log('hola');
+
+    if (e.currentTarget.id === 'comic') {
+
+      this.setState(
+        {
+          card: { ...cardState, typography: '' }
+        });
+
+    } else if (e.currentTarget.id === 'ubuntu') {
+      this.setState(
+        {
+          card: { ...cardState, typography: 'card__typo-ubuntu' }
+        });
+
+    } else if (e.currentTarget.id === 'montserrat') {
+      this.setState(
+        {
+          card: { ...cardState, typography: 'card__typo-montserrat' }
         });
     }
   }
@@ -127,7 +155,7 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <CardCreator card={this.state.card} skills={this.state.skills} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} />
+        <CardCreator card={this.state.card} skills={this.state.skills} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} handleFonts={this.handleFonts}/>
       </React.Fragment>
     )
   }
