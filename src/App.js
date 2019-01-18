@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import CardCreator from './components/CardCreator';
 import { fetchSkills } from './services/SkillsService';
 import './App.scss';
@@ -151,7 +152,6 @@ class App extends Component {
 
   render() {
     this.fetchNewSkills();
-
     return (
       <React.Fragment>
         <CardCreator card={this.state.card} skills={this.state.skills} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} handleFonts={this.handleFonts}/>
