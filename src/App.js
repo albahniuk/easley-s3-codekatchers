@@ -127,7 +127,6 @@ class App extends Component {
 
   handleFonts(e) {
     const cardState = this.state.card;
-    console.log('hola');
 
     if (e.currentTarget.id === 'comic') {
 
