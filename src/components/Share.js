@@ -1,6 +1,36 @@
 import React, { Component } from 'react';
+const urlCard = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
 
 class Share extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          twitter: 'twitter',
+          linkTwitter: '',
+          linkCard: '' 
+        }
+        this.handleShare = this.handleShare.bind(this);
+    }
+
+    handleShare() {
+        fetch(urlCard, {
+            method: 'POST',
+            body: JSON.stringify(this.props.card),
+            headers: {
+              'content-type': 'application/json'
+            },
+          })
+            .then(urlResponse => urlResponse.json())
+            .then(url => {
+                this.setState({
+                    twitter: 'on',
+                    linkTwitter: `https://twitter.com/share?url=${url.cardURL}&text=Lo peto con mi tarjeta personal! by Sticker Fighters&hashtags=JavaScript, Adalab`,
+                    linkCard: url.cardURL
+                })        
+            })
+            .catch(err => alert('Servicio no disponible.\nError: ' + err));
+    } 
+
     render() {
         return (
             <fieldset className="share">
@@ -15,18 +45,20 @@ class Share extends Component {
                         </div>
                     </div>
                     <div className="section btn-create-card">
-                        <button className="create-btn" type="button">
+                        <button onClick={this.handleShare} className="create-btn" type="button">
                             <i className="far fa-address-card"></i>
                             <h3 className="create-title">Crear tarjeta</h3>
                         </button>
                     </div>
                 </div>
-                <div className="share__wrapper twitter">
+                <div className={`share__wrapper ${this.state.twitter}`}>
                     <div className="share-created">
                         <p className="text-created">La tarjeta ha sido creada:</p>
-                        <div className="link-created"></div>
+                    <div className="link-created">
+                        <a href={this.state.linkCard} target="_blank">{this.state.linkCard}</a>
                     </div>
-                    <a className="link-twitter" href="" target="_blank">
+                    </div>
+                    <a className="link-twitter" href={this.state.linkTwitter} target="_blank">
                         <button className="share-twitter" type="button">
                             <i className="fab fa-twitter"></i>
                             <span className="text-twitter">Compartir en Twitter</span>

@@ -23,8 +23,8 @@ class MainPreview extends Component {
     writeLinkedin(linkedin) {
         if (linkedin !== '') {
             return (
-                <a class="element__link" href={`https://linkedin.com/in/ ${this.props.card.linkedin}`} target="_blank">
-                    <i class="card_icon fab fa-linkedin-in"></i>
+                <a className="element__link" href={`https://linkedin.com/in/ ${this.props.card.linkedin}`} target="_blank">
+                    <i className="card_icon fab fa-linkedin-in"></i>
                 </a>
             )
         }
@@ -33,8 +33,8 @@ class MainPreview extends Component {
     writeGithub(github) {
         if (github !== '') {
             return (
-                <a class="element__link" href={`https://github.com/ ${this.props.card.github}`} target="_blank">
-                <i class="card_icon fab fa-github-alt"></i>
+                <a className="element__link" href={`https://github.com/ ${this.props.card.github}`} target="_blank">
+                <i className="card_icon fab fa-github-alt"></i>
                 </a>
             )
         }
@@ -45,12 +45,12 @@ class MainPreview extends Component {
         return (
             <section className="cardSection">
                 <div className="card">
-                    <div className="card__wrapper" id="card__wrapper">
+                    <div className={`card__wrapper ${this.props.card.palette} ${this.props.card.typography}`} id="card__wrapper">
                         <div className="card__titles">
                             <h2 className="title__name">{this.props.card.name}</h2>
                             <p className="title__profession">{this.props.card.job}</p>
                         </div>
-                        <div className="card__image" style={{ backgroundImage: `url(${this.props.card.image})` }}></div>
+                        <div className="card__image" style={{ backgroundImage: `url(${this.props.card.photo})` }}></div>
                         <ul className="card__list card__contact-list">
                             <li className="contact-list__element contact-list__phone">{this.writePhone(this.props.card.phone)}
                             </li>

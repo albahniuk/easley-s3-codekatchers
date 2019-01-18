@@ -8,7 +8,7 @@ class Colors extends Component {
                 <div className="design--colours_radio">
                     <div className="clase__green">
                         <label className="clase" htmlFor="green">
-                            <input onClick={this.props.handleColor}className="design_input" type="radio" name="colors" value="green" id="green" checked />
+                            <input onClick={this.props.handleColor} className="design_input" type="radio" name="colors" value="green" id="green" checked/>
                             <div className="design--colours_label">
                                 <div className="label_item item_green_1"></div>
                                 <div className="label_item item_green_2"></div>
