@@ -9,4 +9,4 @@ ReactDOM.render(
         <App />
     </HashRouter>, 
     document.getElementById('root')
-    );
+);

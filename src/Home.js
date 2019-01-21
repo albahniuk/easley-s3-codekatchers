@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './images/logo-adalab-80px.png';
-import mainLogo from './images/tarjetas-molonas.png';
-import './App.scss';
+import { Link } from 'react-router-dom';
+import logo from './../images/logo-adalab-80px.png';
+import mainLogo from './../images/tarjetas-molonas.png';
 
 class Home extends Component {
   render() {
@@ -47,9 +47,9 @@ class Home extends Component {
               </div>
             </ul>
           </div>
-          <a className="hero_btn-link" href="creator.html">
+          <Link className="hero_btn-link" to='/card'>
             <button className="hero_btn btn-style">Comenzar</button>
-          </a>
+          </Link>
         </div>
 
         <footer className="footer_box">
