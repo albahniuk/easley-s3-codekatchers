@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-const urlCard = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
+import {sendCard} from './../services/CardService';
 
 class Share extends Component {
     constructor(props) {
@@ -13,14 +13,7 @@ class Share extends Component {
     }
 
     handleShare() {
-        fetch(urlCard, {
-            method: 'POST',
-            body: JSON.stringify(this.props.card),
-            headers: {
-              'content-type': 'application/json'
-            },
-          })
-            .then(urlResponse => urlResponse.json())
+        sendCard(this.props.card)
             .then(url => {
                 this.setState({
                     twitter: 'on',

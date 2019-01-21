@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import Home from './components/Home';
+=======
+import { Route, Switch } from 'react-router-dom';
+>>>>>>> dev
 import CardCreator from './components/CardCreator';
 import { fetchSkills } from './services/SkillsService';
 import './App.scss';
@@ -155,7 +159,6 @@ class App extends Component {
 
   render() {
     this.fetchNewSkills();
-
     return (
       <React.Fragment>
         <Switch>
