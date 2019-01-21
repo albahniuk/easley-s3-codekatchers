@@ -153,8 +153,38 @@ class App extends Component {
     }
   }
 
-  render() {
+  printSkills(e){
+    const cardState = this.state.card;
+    const currentSkills = cardState.skills.slice(0);
+    const check = e.currentTarget;
+    const newSkill = e.currentTarget.value;
+    const isChecked = check.checked;
+
+    if(currentSkills.length < 3 && isChecked) {
+      currentSkills.push(newSkill);
+    } else {
+      check.checked = false;
+      const index = currentSkills.indexOf(newSkill);
+      if (index > -1) {
+        currentSkills.splice(index, 1);
+      }
+
+     
+    }
+
+    const newCard = {...cardState, skills: currentSkills};
+
+    this.setState({
+      card: newCard
+    });
+
+  }
+
+  componentDidMount(){
     this.fetchNewSkills();
+  }
+
+  render() {
     return (
       <React.Fragment>
         <Switch>
