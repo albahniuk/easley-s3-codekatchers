@@ -30,6 +30,14 @@ class Image extends Component {
         this.props.handleUrl(url);
     }
 
+    getPreview(image) {
+        if(image) {
+            return { backgroundImage: `url(${this.props.card.photo})` };
+        } else {
+            return {};
+        }
+    }
+
     render() {
         return (
             <div className="fill--form__btn">
@@ -37,7 +45,7 @@ class Image extends Component {
                 <div className="fill--wraper">
                     <button type="button" className="fill--btn" onClick={this.handleClick}>Añadir imagen</button>
                     <input className="search--btn" type="file" id="img-selector" onChange={this.handleChangeImage} ref={this.fileInput} />
-                    <div className="fill--input__img"></div>
+                    <div className="fill--input__img" style={this.getPreview(this.props.preview)}></div>
                 </div>
             </div>
         )

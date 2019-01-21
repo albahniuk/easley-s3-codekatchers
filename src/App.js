@@ -9,6 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       skills: [],
+      preview: false,
       card: {
         name: 'Nombre Apellido',
         job: 'Front-end developer',
@@ -64,7 +65,8 @@ class App extends Component {
 
     this.setState(
       {
-        card: { ...cardState, photo: url }
+        card: { ...cardState, photo: url },
+        preview: true
       }
     )
   }
@@ -154,7 +156,7 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <CardCreator card={this.state.card} skills={this.state.skills} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} handleFonts={this.handleFonts}/>
+        <CardCreator card={this.state.card} skills={this.state.skills} preview={this.state.preview} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} handleFonts={this.handleFonts}/>
       </React.Fragment>
     )
   }
