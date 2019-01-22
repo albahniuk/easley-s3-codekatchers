@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       skills: [],
       preview: false,
+      savedColor: 'green',
       card: {
         name: 'Nombre Apellido',
         job: 'Front-end developer',
@@ -38,7 +39,7 @@ class App extends Component {
     this.handleSkills = this.handleSkills.bind(this);
     this.handleReset = this.handleReset.bind(this);
   }
-
+  
   fetchNewSkills() {
     fetchSkills()
       .then(data => {
@@ -114,21 +115,27 @@ class App extends Component {
 
       this.setState(
         {
-          card: { ...cardState, palette: '' }
+          card: { ...cardState, palette: '' },
+          savedColor: 'green'
         });
 
     } else if (e.currentTarget.value === 'red') {
       this.setState(
         {
-          card: { ...cardState, palette: 'card__theme-red' }
+          card: { ...cardState, palette: 'card__theme-red' },
+          savedColor: 'red'
         });
 
     } else if (e.currentTarget.value === 'blue') {
       this.setState(
         {
-          card: { ...cardState, palette: 'card__theme-blue' }
+          card: { ...cardState, palette: 'card__theme-blue' },
+          savedColor: 'blue'
         });
     }
+
+    console.log(this.state.savedColor);
+    console.log(this.state.card.palette);
   }
 
   handleFonts(e) {
@@ -179,7 +186,7 @@ class App extends Component {
     });
   }
 
-  handleReset(){
+  handleReset(e){
     const cardState = this.state;
 
     this.setState({...cardState, card: {
@@ -194,6 +201,8 @@ class App extends Component {
       typography: '2',
       skills: []
     }});
+
+    document.querySelector(".form").reset();
   }
 
   componentDidMount(){
@@ -206,7 +215,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Home} />
 
-          <Route path='/card' render={() => <CardCreator card={this.state.card} skills={this.state.skills} preview={this.state.preview} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} handleFonts={this.handleFonts} handleSkills={this.handleSkills} handleReset={this.handleReset}/>} />
+          <Route path='/card' render={() => <CardCreator card={this.state.card} skills={this.state.skills} preview={this.state.preview} savedColor={this.state.savedColor} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} handleFonts={this.handleFonts} handleSkills={this.handleSkills} handleReset={this.handleReset}/>} />
         </Switch>
       </React.Fragment>
     )

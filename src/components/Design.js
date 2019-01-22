@@ -16,7 +16,7 @@ class Design extends Component {
                     </div>
                 </div>
                 <div className="section design--section">
-                    <Colors handleColor={this.props.handleColor}/>
+                    <Colors handleColor={this.props.handleColor} savedColor={this.props.savedColor}/>
                     <Fonts handleFonts={this.props.handleFonts}/>
                 </div>
             </fieldset>
