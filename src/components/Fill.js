@@ -7,14 +7,14 @@ import Skills from './Skills';
 class Fill extends Component {
     render() {
         return (
-            <fieldset className="fill--page">
-                <div className="form--btn">
+            <fieldset className={`fill--page ${this.props.collapsibleFill}`}>
+                <div onClick={this.props.handleCollapsibleFill} className="form--btn">
                     <div className="form--btn_title">
                         <i className="far fa-keyboard"></i>
                         <h3 className="btn-desplegable">Rellena</h3>
                     </div>
                     <div className="form--btn_icon">
-                        <i className="fas fa-chevron-down"></i>
+                        <i className={`fas ${this.props.arrowFill}`}></i>
                     </div>
                 </div>
                 <div className="section fill--content">
