@@ -7,7 +7,7 @@ class Skills extends Component {
             return (
                 <div className="fill--checkbox__item" key={index}>
                     <label htmlFor={skill}>
-                        <input className="fill--checkbox__input" id={skill} type="checkbox" value={skill} name="skills" />
+                        <input className="fill--checkbox__input" id={skill} type="checkbox" value={skill} name="skills" onClick={this.props.handleSkills}/>
                             {skill}
                     </label>
                 </div>

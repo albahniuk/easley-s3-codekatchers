@@ -22,7 +22,7 @@ class App extends Component {
         github: '',
         palette: '1',
         typography: '2',
-        skills: ['html']
+        skills: []
       }
     }
 
@@ -35,6 +35,7 @@ class App extends Component {
     this.handleGithub = this.handleGithub.bind(this);
     this.handleColor = this.handleColor.bind(this);
     this.handleFonts = this.handleFonts.bind(this);
+    this.handleSkills = this.handleSkills.bind(this);
   }
 
   fetchNewSkills() {
@@ -153,14 +154,41 @@ class App extends Component {
     }
   }
 
-  render() {
+  handleSkills(e){
+    const cardState = this.state.card;
+    const currentSkills = cardState.skills.slice(0);
+    const check = e.currentTarget;
+    const newSkill = check.value;
+    const isChecked = check.checked;
+
+    if(currentSkills.length < 3 && isChecked) {
+      currentSkills.push(newSkill);
+    } else {
+      check.checked = false;
+      const index = currentSkills.indexOf(newSkill);
+      if (index > -1) {
+        currentSkills.splice(index, 1);
+      }
+    }
+
+    const newCard = {...cardState, skills: currentSkills};
+
+    this.setState({
+      card: newCard
+    });
+  }
+
+  componentDidMount(){
     this.fetchNewSkills();
+  }
+
+  render() {
     return (
       <React.Fragment>
         <Switch>
           <Route exact path='/' component={Home} />
 
-          <Route path='/card' render={() => <CardCreator card={this.state.card} skills={this.state.skills} preview={this.state.preview} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} handleFonts={this.handleFonts}/>} />
+          <Route path='/card' render={() => <CardCreator card={this.state.card} skills={this.state.skills} preview={this.state.preview} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} handleFonts={this.handleFonts} handleSkills={this.handleSkills}/>} />
         </Switch>
       </React.Fragment>
     )
