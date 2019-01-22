@@ -79,7 +79,7 @@ class MainPreview extends Component {
                         <ul className="card__list card__skills-list" id="ul-skills">
                         {this.writeSkills(this.props.card.skills)}
                         </ul>
-                        <PreviewButton />
+                        <PreviewButton handleReset={this.props.handleReset}/>
                     </div>
                 </div>
             </section>

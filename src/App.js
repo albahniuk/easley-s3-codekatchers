@@ -36,6 +36,7 @@ class App extends Component {
     this.handleColor = this.handleColor.bind(this);
     this.handleFonts = this.handleFonts.bind(this);
     this.handleSkills = this.handleSkills.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   fetchNewSkills() {
@@ -178,6 +179,23 @@ class App extends Component {
     });
   }
 
+  handleReset(){
+    const cardState = this.state;
+
+    this.setState({...cardState, card: {
+      name: 'Nombre Apellido',
+      job: 'Front-end developer',
+      photo: defaultImg,
+      email: '',
+      phone: '',
+      linkedin: '',
+      github: '',
+      palette: '1',
+      typography: '2',
+      skills: []
+    }});
+  }
+
   componentDidMount(){
     this.fetchNewSkills();
   }
@@ -188,7 +206,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Home} />
 
-          <Route path='/card' render={() => <CardCreator card={this.state.card} skills={this.state.skills} preview={this.state.preview} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} handleFonts={this.handleFonts} handleSkills={this.handleSkills}/>} />
+          <Route path='/card' render={() => <CardCreator card={this.state.card} skills={this.state.skills} preview={this.state.preview} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} handleFonts={this.handleFonts} handleSkills={this.handleSkills} handleReset={this.handleReset}/>} />
         </Switch>
       </React.Fragment>
     )
