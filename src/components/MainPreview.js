@@ -40,6 +40,21 @@ class MainPreview extends Component {
         }
     }
 
+    writeSkills(skills) {
+        if (skills !== '') {
+
+            const mappedSkills = skills.map((skill, index) => {
+                return (
+                    <li className="skills-list__element" key={index}>
+                        <p className="element__content">{skill}</p>
+                    </li>
+                )
+            })
+
+            return mappedSkills;
+        }
+    }
+
 
     render() {
         return (
@@ -62,6 +77,7 @@ class MainPreview extends Component {
                             </li>
                         </ul>
                         <ul className="card__list card__skills-list" id="ul-skills">
+                        {this.writeSkills(this.props.card.skills)}
                         </ul>
                         <PreviewButton />
                     </div>

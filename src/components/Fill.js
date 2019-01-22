@@ -21,7 +21,7 @@ class Fill extends Component {
                     <NameJob handleName={this.props.handleName} handleJob={this.props.handleJob}/>
                     <Image handleUrl={this.props.handleUrl} preview={this.props.preview} card={this.props.card}/>
                     <SocialMedia handleEmail={this.props.handleEmail} handlePhone={this.props.handlePhone} handleLinkedin={this.props.handleLinkedin} handleGithub={this.props.handleGithub}/>
-                    <Skills skills={this.props.skills}/>
+                    <Skills skills={this.props.skills} handleSkills={this.props.handleSkills}/>
                 </div>
             </fieldset>
         )
