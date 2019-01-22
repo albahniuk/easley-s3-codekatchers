@@ -1,0 +1,14 @@
+{
+  "main.css": "./static/css/main.a7861dad.chunk.css",
+  "main.js": "./static/js/main.3b854bd3.chunk.js",
+  "main.js.map": "./static/js/main.3b854bd3.chunk.js.map",
+  "static/js/1.f041bca5.chunk.js": "./static/js/1.f041bca5.chunk.js",
+  "static/js/1.f041bca5.chunk.js.map": "./static/js/1.f041bca5.chunk.js.map",
+  "runtime~main.js": "./static/js/runtime~main.4a686d48.js",
+  "runtime~main.js.map": "./static/js/runtime~main.4a686d48.js.map",
+  "static/media/tarjetas-molonas.png": "./static/media/tarjetas-molonas.61e1873b.png",
+  "static/css/main.a7861dad.chunk.css.map": "./static/css/main.a7861dad.chunk.css.map",
+  "index.html": "./index.html",
+  "precache-manifest.bce08d1553a7ae4d3271871b8f21739b.js": "./precache-manifest.bce08d1553a7ae4d3271871b8f21739b.js",
+  "service-worker.js": "./service-worker.js"
+}
