@@ -4,19 +4,13 @@ class Colors extends Component {
     constructor(props){
         super(props);
 
-        this.state = {
-            check: 'green'
-        }
-
         this.handleColorCheck = this.handleColorCheck.bind(this);
     }
 
     handleColorCheck = e => {
 
-        this.props.handleColor(e);
-
         this.setState({
-            check: this.props.savedColor
+            check: e.currentTarget.value
         });
     }
     
@@ -27,7 +21,7 @@ class Colors extends Component {
                 <div className="design--colours_radio">
                     <div className="clase__green">
                         <label className="clase" htmlFor="green">
-                            <input onChange={this.handleColorCheck} className="design_input" type="radio" name="colors" value="green" id="green" checked={this.state.check === 'green'} />
+                            <input onChange={this.handleColorCheck} onClick={this.props.handleColor} className="design_input" type="radio" name="colors" value="1" id="green" checked={this.props.card.palette === '1'} />
                             <div className="design--colours_label">
                                 <div className="label_item item_green_1"></div>
                                 <div className="label_item item_green_2"></div>
@@ -36,7 +30,7 @@ class Colors extends Component {
                         </label>
                     </div>
                     <div className="clase clase__red">
-                        <input onChange={this.handleColorCheck} className="design_input" type="radio" name="colors" value="red" id="red" checked={this.state.check === 'red'} />
+                        <input onChange={this.handleColorCheck} onClick={this.props.handleColor} className="design_input" type="radio" name="colors" value="2" id="red" checked={this.props.card.palette === '2'} />
                         <label htmlFor="red">
                             <div className="design--colours_label">
                                 <div className="label_item item_red_1"></div>
@@ -46,7 +40,7 @@ class Colors extends Component {
                         </label>
                     </div>
                     <div className="clase clase__blue">
-                        <input onChange={this.handleColorCheck} className="design_input" type="radio" name="colors" value="blue" id="blue" checked={this.state.check === 'blue'} />
+                        <input onChange={this.handleColorCheck} onClick={this.props.handleColor} className="design_input" type="radio" name="colors" value="3" id="blue" checked={this.props.card.palette === '3'} />
                         <label htmlFor="blue">
                             <div className="design--colours_label">
                                 <div className="label_item item_blue_1"></div>

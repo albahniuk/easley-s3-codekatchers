@@ -55,12 +55,22 @@ class MainPreview extends Component {
         }
     }
 
+    choosePalette(color) {
+        if(color === '1') {
+            return ('');
+        } else if(color === '2') {
+            return ('card__theme-red');
+        } else if(color === '3') {
+            return ('card__theme-blue');
+        }
+    }
+
 
     render() {
         return (
             <section className="cardSection">
                 <div className="card">
-                    <div className={`card__wrapper ${this.props.card.palette} ${this.props.card.typography}`} id="card__wrapper">
+                    <div className={`card__wrapper ${this.choosePalette(this.props.card.palette)} ${this.props.card.typography}`} id="card__wrapper">
                         <div className="card__titles">
                             <h2 className="title__name">{this.props.card.name}</h2>
                             <p className="title__profession">{this.props.card.job}</p>

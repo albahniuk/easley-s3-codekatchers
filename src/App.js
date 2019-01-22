@@ -12,7 +12,6 @@ class App extends Component {
     this.state = {
       skills: [],
       preview: false,
-      savedColor: 'green',
       card: {
         name: 'Nombre Apellido',
         job: 'Front-end developer',
@@ -111,31 +110,25 @@ class App extends Component {
   handleColor(e) {
     const cardState = this.state.card;
 
-    if (e.currentTarget.value === 'green') {
+    if (e.currentTarget.value === '1') {
 
       this.setState(
         {
-          card: { ...cardState, palette: '' },
-          savedColor: 'green'
+          card: { ...cardState, palette: '1' },
         });
 
-    } else if (e.currentTarget.value === 'red') {
+    } else if (e.currentTarget.value === '2') {
       this.setState(
         {
-          card: { ...cardState, palette: 'card__theme-red' },
-          savedColor: 'red'
+          card: { ...cardState, palette: '2' },
         });
 
-    } else if (e.currentTarget.value === 'blue') {
+    } else if (e.currentTarget.value === '3') {
       this.setState(
         {
-          card: { ...cardState, palette: 'card__theme-blue' },
-          savedColor: 'blue'
+          card: { ...cardState, palette: '3' },
         });
     }
-
-    console.log(this.state.savedColor);
-    console.log(this.state.card.palette);
   }
 
   handleFonts(e) {
@@ -215,7 +208,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Home} />
 
-          <Route path='/card' render={() => <CardCreator card={this.state.card} skills={this.state.skills} preview={this.state.preview} savedColor={this.state.savedColor} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} handleFonts={this.handleFonts} handleSkills={this.handleSkills} handleReset={this.handleReset}/>} />
+          <Route path='/card' render={() => <CardCreator card={this.state.card} skills={this.state.skills} preview={this.state.preview} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} handleFonts={this.handleFonts} handleSkills={this.handleSkills} handleReset={this.handleReset}/>} />
         </Switch>
       </React.Fragment>
     )
