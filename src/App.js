@@ -216,6 +216,16 @@ class App extends Component {
     localStorage.setItem('savedCard', JSON.stringify(data));
   }
 
+  getData() {
+    const savedCard = localStorage.getItem('savedCard');
+
+    if (savedCard !== null) {
+      return JSON.parse(savedCard);
+    } else {
+      return '';
+    }
+  }
+
   handleCollapsibleDesign() {
     if (this.state.collapsibleDesign.includes('collapsible--visible')){
       this.setState({
@@ -271,6 +281,13 @@ handleCollapsibleShare() {
 }
   componentDidMount(){
     this.fetchNewSkills();
+    const card = this.getData();
+
+    if(card !== '') {
+      this.setState({
+        card: card
+      });
+    }
   }
 
   componentDidUpdate(){
