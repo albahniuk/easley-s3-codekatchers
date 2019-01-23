@@ -138,19 +138,19 @@ class App extends Component {
 
       this.setState(
         {
-          card: { ...cardState, typography: '' }
+          card: { ...cardState, typography: '2' }
         });
 
     } else if (e.currentTarget.id === 'ubuntu') {
       this.setState(
         {
-          card: { ...cardState, typography: 'card__typo-ubuntu' }
+          card: { ...cardState, typography: '1' }
         });
 
     } else if (e.currentTarget.id === 'montserrat') {
       this.setState(
         {
-          card: { ...cardState, typography: 'card__typo-montserrat' }
+          card: { ...cardState, typography: '3' }
         });
     }
   }
@@ -195,7 +195,7 @@ class App extends Component {
       skills: []
     }});
 
-    document.querySelector(".form").reset();
+    //document.querySelector(".form").reset();
   }
 
   componentDidMount(){

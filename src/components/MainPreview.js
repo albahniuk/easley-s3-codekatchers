@@ -65,12 +65,22 @@ class MainPreview extends Component {
         }
     }
 
+    chooseTypography(font) {
+        if(font === '1') {
+            return ('card__typo-ubuntu');
+        } else if(font === '2') {
+            return ('');
+        } else if(font === '3') {
+            return ('card__typo-montserrat');
+        }
+    }
+
 
     render() {
         return (
             <section className="cardSection">
                 <div className="card">
-                    <div className={`card__wrapper ${this.choosePalette(this.props.card.palette)} ${this.props.card.typography}`} id="card__wrapper">
+                    <div className={`card__wrapper ${this.choosePalette(this.props.card.palette)} ${this.chooseTypography(this.props.card.typography)}`} id="card__wrapper">
                         <div className="card__titles">
                             <h2 className="title__name">{this.props.card.name}</h2>
                             <p className="title__profession">{this.props.card.job}</p>

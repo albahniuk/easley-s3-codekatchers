@@ -1,18 +1,6 @@
 import React, { Component } from 'react';
 
 class Colors extends Component {
-    constructor(props){
-        super(props);
-
-        this.handleColorCheck = this.handleColorCheck.bind(this);
-    }
-
-    handleColorCheck = e => {
-
-        this.setState({
-            check: e.currentTarget.value
-        });
-    }
     
     render() {
         return (
