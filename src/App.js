@@ -63,6 +63,7 @@ class App extends Component {
       {
         card: { ...cardState, name: e.currentTarget.value }
       });
+
   }
 
   handleJob(e) {
@@ -71,6 +72,7 @@ class App extends Component {
       {
         card: { ...cardState, job: e.currentTarget.value }
       });
+
   }
 
   handleUrl(url) {
@@ -80,8 +82,7 @@ class App extends Component {
       {
         card: { ...cardState, photo: url },
         preview: true
-      }
-    )
+      });
   }
 
   handleEmail(e) {
@@ -90,6 +91,7 @@ class App extends Component {
       {
         card: { ...cardState, email: e.currentTarget.value }
       });
+
   }
 
   handlePhone(e) {
@@ -98,6 +100,7 @@ class App extends Component {
       {
         card: { ...cardState, phone: e.currentTarget.value }
       });
+
   }
 
   handleLinkedin(e) {
@@ -106,6 +109,7 @@ class App extends Component {
       {
         card: { ...cardState, linkedin: e.currentTarget.value }
       });
+
   }
 
   handleGithub(e) {
@@ -114,6 +118,7 @@ class App extends Component {
       {
         card: { ...cardState, github: e.currentTarget.value }
       });
+
   }
 
   handleColor(e) {
@@ -207,6 +212,10 @@ class App extends Component {
     document.querySelector(".form").reset();
   }
 
+  saveData(data) {
+    localStorage.setItem('savedCard', JSON.stringify(data));
+  }
+
   handleCollapsibleDesign() {
     if (this.state.collapsibleDesign.includes('collapsible--visible')){
       this.setState({
@@ -262,6 +271,10 @@ handleCollapsibleShare() {
 }
   componentDidMount(){
     this.fetchNewSkills();
+  }
+
+  componentDidUpdate(){
+    this.saveData(this.state.card);
   }
 
   render() {
