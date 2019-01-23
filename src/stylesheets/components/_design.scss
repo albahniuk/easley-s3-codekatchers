@@ -151,8 +151,8 @@
 
 //Collapsibles
 .section {
-   //aquí estaba sin desplegars
-   
+    display: none;
+    overflow: hidden;
 }
 
 .collapsible--visible {
