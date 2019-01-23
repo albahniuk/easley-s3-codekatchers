@@ -195,7 +195,7 @@ class App extends Component {
       skills: []
     }});
 
-    //document.querySelector(".form").reset();
+    document.querySelector(".form").reset();
   }
 
   componentDidMount(){
