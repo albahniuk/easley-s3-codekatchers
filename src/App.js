@@ -42,11 +42,12 @@ class App extends Component {
     this.handleColor = this.handleColor.bind(this);
     this.handleFonts = this.handleFonts.bind(this);
     this.handleSkills = this.handleSkills.bind(this);
+    this.handleReset = this.handleReset.bind(this);
     this.handleCollapsibleDesign = this.handleCollapsibleDesign.bind(this);
     this.handleCollapsibleFill = this.handleCollapsibleFill.bind(this);
     this.handleCollapsibleShare = this.handleCollapsibleShare.bind(this);
   }
-
+  
   fetchNewSkills() {
     fetchSkills()
       .then(data => {
@@ -118,23 +119,23 @@ class App extends Component {
   handleColor(e) {
     const cardState = this.state.card;
 
-    if (e.currentTarget.value === 'green') {
+    if (e.currentTarget.value === '1') {
 
       this.setState(
         {
-          card: { ...cardState, palette: '' }
+          card: { ...cardState, palette: '1' },
         });
 
-    } else if (e.currentTarget.value === 'red') {
+    } else if (e.currentTarget.value === '2') {
       this.setState(
         {
-          card: { ...cardState, palette: 'card__theme-red' }
+          card: { ...cardState, palette: '2' },
         });
 
-    } else if (e.currentTarget.value === 'blue') {
+    } else if (e.currentTarget.value === '3') {
       this.setState(
         {
-          card: { ...cardState, palette: 'card__theme-blue' }
+          card: { ...cardState, palette: '3' },
         });
     }
   }
@@ -146,19 +147,19 @@ class App extends Component {
 
       this.setState(
         {
-          card: { ...cardState, typography: '' }
+          card: { ...cardState, typography: '2' }
         });
 
     } else if (e.currentTarget.id === 'ubuntu') {
       this.setState(
         {
-          card: { ...cardState, typography: 'card__typo-ubuntu' }
+          card: { ...cardState, typography: '1' }
         });
 
     } else if (e.currentTarget.id === 'montserrat') {
       this.setState(
         {
-          card: { ...cardState, typography: 'card__typo-montserrat' }
+          card: { ...cardState, typography: '3' }
         });
     }
   }
@@ -185,6 +186,25 @@ class App extends Component {
     this.setState({
       card: newCard
     });
+  }
+
+  handleReset(){
+    const cardState = this.state;
+
+    this.setState({...cardState, card: {
+      name: 'Nombre Apellido',
+      job: 'Front-end developer',
+      photo: defaultImg,
+      email: '',
+      phone: '',
+      linkedin: '',
+      github: '',
+      palette: '1',
+      typography: '2',
+      skills: []
+    }});
+
+    document.querySelector(".form").reset();
   }
 
   handleCollapsibleDesign() {
@@ -249,7 +269,7 @@ handleCollapsibleShare() {
       <React.Fragment>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/card' render={() => <CardCreator card={this.state.card} skills={this.state.skills} collapsibleDesign={this.state.collapsibleDesign} collapsibleFill={this.state.collapsibleFill} collapsibleShare={this.state.collapsibleShare} arrowDesign={this.state.arrowDesign} arrowFill={this.state.arrowFill} arrowShare={this.state.arrowShare} preview={this.state.preview} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} handleFonts={this.handleFonts} handleSkills={this.handleSkills} handleCollapsibleDesign={this.handleCollapsibleDesign} handleCollapsibleFill={this.handleCollapsibleFill} handleCollapsibleShare={this.handleCollapsibleShare}/>} />
+          <Route path='/card' render={() => <CardCreator card={this.state.card} skills={this.state.skills} collapsibleDesign={this.state.collapsibleDesign} collapsibleFill={this.state.collapsibleFill} collapsibleShare={this.state.collapsibleShare} arrowDesign={this.state.arrowDesign} arrowFill={this.state.arrowFill} arrowShare={this.state.arrowShare} preview={this.state.preview} handleName={this.handleName} handleJob={this.handleJob} handleUrl={this.handleUrl} handleEmail={this.handleEmail} handlePhone={this.handlePhone} handleLinkedin={this.handleLinkedin} handleGithub={this.handleGithub} handleColor={this.handleColor} handleFonts={this.handleFonts} handleSkills={this.handleSkills} handleCollapsibleDesign={this.handleCollapsibleDesign} handleCollapsibleFill={this.handleCollapsibleFill} handleCollapsibleShare={this.handleCollapsibleShare} handleReset={this.handleReset}/>} />
         </Switch>
       </React.Fragment>
     )
