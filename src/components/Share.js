@@ -7,7 +7,7 @@ class Share extends Component {
         this.state = {
           twitter: 'twitter',
           linkTwitter: '',
-          linkCard: '' 
+          linkCard: '' ,
         }
         this.handleShare = this.handleShare.bind(this);
     }
@@ -22,19 +22,19 @@ class Share extends Component {
                 })        
             })
             .catch(err => alert('Servicio no disponible.\nError: ' + err));
-    } 
+    }
 
     render() {
         return (
-            <fieldset className="share">
+            <fieldset className={`share ${this.props.collapsibleShare}`}>
                 <div className="share__wrapper">
-                    <div className="form--btn">
+                    <div className="form--btn" onClick={this.props.handleCollapsibleShare}>
                         <div className="form--btn_title">
                             <i className="fas fa-share-alt"></i>
                             <h3 className="btn-desplegable">Comparte</h3>
                         </div>
                         <div className="form--btn_icon">
-                            <i className="fas fa-chevron-down"></i>
+                            <i className={`fas ${this.props.arrowShare}`}></i>
                         </div>
                     </div>
                     <div className="section btn-create-card">
