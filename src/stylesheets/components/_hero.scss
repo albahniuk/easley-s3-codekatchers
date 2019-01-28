@@ -1,4 +1,3 @@
-//HERO
 .page_wrapper{
   margin:0;
   padding:0;
@@ -6,6 +5,7 @@
   flex-direction: column;
   height: 100vh;
 }
+
 .hero_box{
   height: 80vh;
   display: flex;
@@ -15,6 +15,7 @@
   flex-grow: 1;
   margin-top:70px;
 }
+
 .hero_title{
   margin: 0;
   padding: 35px 0 4px 0;
@@ -22,12 +23,13 @@
   height: 24px;
   align-self:center;
   @include Text-Style-2;
-   @media all and(min-width:768px){
-     width: 278px;
-     height: 31px;
-     font-size: 24px;
-   }
+    @media all and(min-width:768px){
+      width: 278px;
+      height: 31px;
+      font-size: 24px;
+    }
 }
+
 .hero_text{
   align-self:center;
   width: 264.8px;
@@ -39,10 +41,12 @@
     font-size: 16px;
   }
 }
+
 .hero_text-style{
   margin: 0;
   padding: 0 ;
 }
+
 .hero_icons {
   width: 268px;
   margin: 15px 0 39px 0;
@@ -56,6 +60,7 @@
     border: 5px solid rgba(231, 142, 86, 0.21);
   }
 }
+
 .hero_icons-list{
   margin: 0;
   padding: 0;
@@ -64,25 +69,30 @@
   justify-content: space-between;
   @include Text-Style-7;
 }
+
 .list{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .list .fas{
   width: 25px;
   height: 26px;
   @include Text-Style-4;
 }
+
 .list .far{
   width: 25px;
   height: 26px;
   @include Text-Style-4;
 }
+
 .hero_btn-link {
   text-decoration: none;
   margin-top: auto;
 }
+
 .hero_btn{
   width: 129px;
   height: 42px;
@@ -94,10 +104,11 @@
   border-radius: 21px;
   background-color: $dirty-blue;
   outline:none;
+  cursor: pointer;
 }
+
 .btn-style{
   align-self: center;
   @include Text-Style-5;
-  text-transform: uppercase;
-  
+  text-transform: uppercase;  
 }

@@ -11,7 +11,7 @@ class Fill extends Component {
                 <div onClick={this.props.handleCollapsibleFill} className="form--btn">
                     <div className="form--btn_title">
                         <i className="far fa-keyboard"></i>
-                        <h3 className="btn-desplegable">Rellena</h3>
+                        <h3 className="btn-collapsible">Rellena</h3>
                     </div>
                     <div className="form--btn_icon">
                         <i className={`fas ${this.props.arrowFill}`}></i>

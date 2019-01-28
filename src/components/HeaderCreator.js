@@ -6,12 +6,12 @@ class HeaderCreator extends Component {
     render() {
         return (
             <div className="headerCreator_box">
-          <header className="headerCreator">
-            <Link to='/'>
-                <img className="header__image" src={mainLogo} alt="" />
-            </Link>
-          </header>
-        </div>
+                <header className="headerCreator">
+                    <Link to='/'>
+                        <img className="header__image" src={mainLogo} alt="" />
+                    </Link>
+                </header>
+            </div>
         )
     }
 }

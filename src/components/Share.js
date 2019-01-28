@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import {sendCard} from './../services/CardService';
+import { sendCard } from './../services/CardService';
 
 class Share extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          twitter: 'twitter',
-          linkTwitter: '',
-          linkCard: '' ,
+            twitter: 'twitter',
+            linkTwitter: '',
+            linkCard: '',
         }
         this.handleShare = this.handleShare.bind(this);
     }
@@ -19,7 +19,7 @@ class Share extends Component {
                     twitter: 'on',
                     linkTwitter: `https://twitter.com/share?url=${url.cardURL}&text=Lo peto con mi tarjeta personal! by Sticker Fighters&hashtags=JavaScript, Adalab`,
                     linkCard: url.cardURL
-                })        
+                })
             })
             .catch(err => alert('Servicio no disponible.\nError: ' + err));
     }
@@ -31,7 +31,7 @@ class Share extends Component {
                     <div className="form--btn" onClick={this.props.handleCollapsibleShare}>
                         <div className="form--btn_title">
                             <i className="fas fa-share-alt"></i>
-                            <h3 className="btn-desplegable">Comparte</h3>
+                            <h3 className="btn-collapsible">Comparte</h3>
                         </div>
                         <div className="form--btn_icon">
                             <i className={`fas ${this.props.arrowShare}`}></i>
@@ -47,9 +47,9 @@ class Share extends Component {
                 <div className={`share__wrapper ${this.state.twitter}`}>
                     <div className="share-created">
                         <p className="text-created">La tarjeta ha sido creada:</p>
-                    <div className="link-created">
-                        <a href={this.state.linkCard} target="_blank">{this.state.linkCard}</a>
-                    </div>
+                        <div className="link-created">
+                            <a href={this.state.linkCard} target="_blank">{this.state.linkCard}</a>
+                        </div>
                     </div>
                     <a className="link-twitter" href={this.state.linkTwitter} target="_blank">
                         <button className="share-twitter" type="button">

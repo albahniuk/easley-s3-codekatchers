@@ -38,9 +38,10 @@
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
   background-color: $dull-orange;
   border-style: none;
-  margin-bottom:20px;
+  margin-bottom: 20px;
   color: $white;
   margin-top: 6px;
+  cursor: pointer;
 }
 
 .fill--form__btn {
@@ -49,17 +50,17 @@
 }
 
 .search--btn {
-  color:transparent;
+  color: transparent;
   display: none;
 }
 
 .fill--checkbox__text {
-  margin-top:40px;
+  margin-top: 40px;
   margin-bottom: 10px;
 }
 
 .fill--checkbox__item {
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 .fill--checkbox__input {

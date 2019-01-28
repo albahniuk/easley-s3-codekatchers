@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class PreviewButton extends Component {
     render() {
-        return(
+        return (
             <button className="card__button" type="button" onClick={this.props.handleReset}>
                 <span className="button__icon">
                     <i className="button_icon far fa-trash-alt"></i>

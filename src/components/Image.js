@@ -3,10 +3,9 @@ import React, { Component } from 'react';
 const reader = new FileReader();
 
 class Image extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.fileInput = React.createRef();
-
         this.handleChangeImage = this.handleChangeImage.bind(this);
         this.handleLoadImage = this.handleLoadImage.bind(this);
         this.handleClick = this.handleClick.bind(this);
@@ -17,12 +16,9 @@ class Image extends Component {
     }
 
     handleChangeImage(e) {
-
         const files = e.currentTarget.files[0];
-
         reader.addEventListener('load', this.handleLoadImage);
         reader.readAsDataURL(files);
-    
     }
 
     handleLoadImage() {
@@ -31,7 +27,7 @@ class Image extends Component {
     }
 
     getPreview(image) {
-        if(image) {
+        if (image) {
             return { backgroundImage: `url(${this.props.card.photo})` };
         } else {
             return {};

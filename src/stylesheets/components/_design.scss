@@ -21,6 +21,7 @@
   border: 0px;
   font-size: 18px;
   color: $gunmetal;
+  cursor: pointer;
 }
 
 .form--btn_title > .far {
@@ -33,7 +34,7 @@
   align-items: center;
 }
 
-.btn-desplegable {
+.btn-collapsible {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   margin: 0 0 0 10px;
@@ -91,7 +92,7 @@
   background-color: $azure;
 }
 
-.clase {
+.colours {
   position:relative;
   display: flex;
   justify-content: flex-end;

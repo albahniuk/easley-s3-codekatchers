@@ -10,7 +10,9 @@ class Footer extends Component {
                         <p className="footer_par">Awesome profile-cards @2018</p>
                     </div>
                     <div>
-                        <img className="footer_logo" src={logo} alt="" />
+                        <a href="https://adalab.es/">
+                            <img className="footer_logo" src={logo} alt="" />
+                        </a>
                     </div>
                 </div>
             </footer>
