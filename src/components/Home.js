@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from './../images/logo-adalab-80px.png';
+import Footer from './Footer';
 import mainLogo from './../images/tarjetas-molonas.png';
 
 class Home extends Component {
@@ -51,16 +51,7 @@ class Home extends Component {
             <button className="hero_btn btn-style">Comenzar</button>
           </Link>
         </div>
-        <footer className="footer_box">
-          <div className="footer_box-container">
-            <div>
-              <p className="footer_par">Awesome profile-cards @2018</p>
-            </div>
-            <div>
-              <img className="footer_logo" src={logo} alt="" />
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     );
   }
