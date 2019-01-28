@@ -51,7 +51,6 @@ class Home extends Component {
             <button className="hero_btn btn-style">Comenzar</button>
           </Link>
         </div>
-
         <footer className="footer_box">
           <div className="footer_box-container">
             <div>

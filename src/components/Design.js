@@ -9,7 +9,7 @@ class Design extends Component {
                 <div className="form--btn" onClick={this.props.handleCollapsibleDesign}>
                     <div className="form--btn_title">
                         <i className="far fa-object-ungroup"></i>
-                        <h3 className="btn-desplegable">Diseña</h3>
+                        <h3 className="btn-collapsible">Diseña</h3>
                     </div>
                     <div className="form--btn_icon">
                         <i className={`fas ${this.props.arrowDesign}`}></i>

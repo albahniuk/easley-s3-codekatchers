@@ -34,7 +34,7 @@ class MainPreview extends Component {
         if (github !== '') {
             return (
                 <a className="element__link" href={`https://github.com/ ${this.props.card.github}`} target="_blank">
-                <i className="card_icon fab fa-github-alt"></i>
+                    <i className="card_icon fab fa-github-alt"></i>
                 </a>
             )
         }
@@ -56,21 +56,21 @@ class MainPreview extends Component {
     }
 
     choosePalette(color) {
-        if(color === '1') {
+        if (color === '1') {
             return ('');
-        } else if(color === '2') {
+        } else if (color === '2') {
             return ('card__theme-red');
-        } else if(color === '3') {
+        } else if (color === '3') {
             return ('card__theme-blue');
         }
     }
 
     chooseTypography(font) {
-        if(font === '1') {
+        if (font === '1') {
             return ('card__typo-ubuntu');
-        } else if(font === '2') {
+        } else if (font === '2') {
             return ('');
-        } else if(font === '3') {
+        } else if (font === '3') {
             return ('card__typo-montserrat');
         }
     }
@@ -97,9 +97,9 @@ class MainPreview extends Component {
                             </li>
                         </ul>
                         <ul className="card__list card__skills-list" id="ul-skills">
-                        {this.writeSkills(this.props.card.skills)}
+                            {this.writeSkills(this.props.card.skills)}
                         </ul>
-                        <PreviewButton handleReset={this.props.handleReset}/>
+                        <PreviewButton handleReset={this.props.handleReset} />
                     </div>
                 </div>
             </section>

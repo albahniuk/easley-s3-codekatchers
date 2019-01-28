@@ -104,11 +104,11 @@
   border-radius: 21px;
   background-color: $dirty-blue;
   outline:none;
+  cursor: pointer;
 }
 
 .btn-style{
   align-self: center;
   @include Text-Style-5;
-  text-transform: uppercase;
-  
+  text-transform: uppercase;  
 }
