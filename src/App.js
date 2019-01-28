@@ -208,7 +208,8 @@ class App extends Component {
       palette: '1',
       typography: '2',
       skills: []
-    }});
+    },
+      preview: false});
 
     document.querySelector(".form").reset();
   }
