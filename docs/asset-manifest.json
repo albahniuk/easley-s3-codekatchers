@@ -1,14 +1,14 @@
 {
-  "main.css": "./static/css/main.12e3cdda.chunk.css",
-  "main.js": "./static/js/main.d231f4c5.chunk.js",
-  "main.js.map": "./static/js/main.d231f4c5.chunk.js.map",
+  "main.css": "./static/css/main.4c6e7074.chunk.css",
+  "main.js": "./static/js/main.cd0d1e53.chunk.js",
+  "main.js.map": "./static/js/main.cd0d1e53.chunk.js.map",
   "static/js/1.a29fc02a.chunk.js": "./static/js/1.a29fc02a.chunk.js",
   "static/js/1.a29fc02a.chunk.js.map": "./static/js/1.a29fc02a.chunk.js.map",
   "runtime~main.js": "./static/js/runtime~main.4a686d48.js",
   "runtime~main.js.map": "./static/js/runtime~main.4a686d48.js.map",
   "static/media/tarjetas-molonas.png": "./static/media/tarjetas-molonas.61e1873b.png",
-  "static/css/main.12e3cdda.chunk.css.map": "./static/css/main.12e3cdda.chunk.css.map",
+  "static/css/main.4c6e7074.chunk.css.map": "./static/css/main.4c6e7074.chunk.css.map",
   "index.html": "./index.html",
-  "precache-manifest.cea59dc41fb7a1dcdcf510b3189ec23d.js": "./precache-manifest.cea59dc41fb7a1dcdcf510b3189ec23d.js",
+  "precache-manifest.39a6b689fd9d6b2b9b6edc70647931a3.js": "./precache-manifest.39a6b689fd9d6b2b9b6edc70647931a3.js",
   "service-worker.js": "./service-worker.js"
 }
